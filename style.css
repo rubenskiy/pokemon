@@ -5,7 +5,7 @@ body {
     justify-content: center;
 }
 
-#searchBox {
+#Box {
     align-items: center;
     display: flex;
 }
