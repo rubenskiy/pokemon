@@ -1,3 +1,11 @@
 body {
-    background-image: ;
+    background-image: url("https://wallpaper.forfun.com/fetch/18/18a109fdec6a08f5b9ef10850a5a6fea.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+
+#searchBox {
+    align-items: center;
+    display: flex;
 }
