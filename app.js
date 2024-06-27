@@ -44,13 +44,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 // getPokemon('Bulbasaur')
 function getPokeData() {
     return __awaiter(this, void 0, void 0, function () {
-        var pokemonName, response, data, pokemonPic, imageElement, error_1;
+        var pokemonName, response, data, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
                     pokemonName = document.getElementById("pokemonName");
-                    return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(pokemonName.toLowerCase()))];
+                    return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(pokemonName))];
                 case 1:
                     response = _a.sent();
                     if (!response.ok) {
@@ -59,9 +59,7 @@ function getPokeData() {
                     return [4 /*yield*/, response.json()];
                 case 2:
                     data = _a.sent();
-                    pokemonPic = data.sprites.front_default;
-                    imageElement = document.getElementById("pokemonPicture");
-                    imageElement.src = pokemonSprite;
+                    console.log(data);
                     return [3 /*break*/, 4];
                 case 3:
                     error_1 = _a.sent();

@@ -21,6 +21,8 @@ async function getPokeData() {
 
         const data = await response.json();
         
+        console.log(data)
+
 
     }
     catch(error){

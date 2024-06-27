@@ -3,8 +3,19 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;
+    align-items: center;
+    margin: 200px 600px ;
 }
 
+.search_button:hover {
+    background-color: aqua;
+
+}
+
+.search_button {
+    align-items: center;
+    margin: 10px 44px;
+}
 
 
 
