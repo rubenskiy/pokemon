@@ -1,8 +1,4 @@
-// // const getPokemon = async (pokemonName) => {
-// //     const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=800');
-// //     let data = await response.json()
-// //     console.log(data)
-// //     data
+//const pokemonName = document.getElementById("pokemonName");
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -39,12 +35,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-//     //.then(response => response.json()  
-// }
-// getPokemon('Bulbasaur')
+var pokemonWeight = document.getElementById("weight");
 function getPokeData() {
     return __awaiter(this, void 0, void 0, function () {
-        var pokemonName, response, data, error_1;
+        var pokemonName, response, data, pokemonSprite, imgElement, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -54,12 +48,15 @@ function getPokeData() {
                 case 1:
                     response = _a.sent();
                     if (!response.ok) {
-                        throw new Error("Resource not found");
+                        throw new Error("Pokemon not found");
                     }
                     return [4 /*yield*/, response.json()];
                 case 2:
                     data = _a.sent();
-                    console.log(data);
+                    pokemonWeight.textContent = "Weight: ".concat(data.weight);
+                    pokemonSprite = data.sprites.front_default;
+                    imgElement = document.getElementById("pokemonSprite");
+                    imgElement.style.display = "block";
                     return [3 /*break*/, 4];
                 case 3:
                     error_1 = _a.sent();
@@ -70,3 +67,5 @@ function getPokeData() {
         });
     });
 }
+document.querySelector("search_button").addEventListener("click", getPokeData);
+getPokeData();
