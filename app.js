@@ -1,4 +1,3 @@
-//const pokemonName = document.getElementById("pokemonName");
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,15 +34,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var pokemonHeight = document.getElementById("height");
 var pokemonWeight = document.getElementById("weight");
+//const pokemonPicture = document.getElementById("poke-pic");
 function getPokeData() {
     return __awaiter(this, void 0, void 0, function () {
-        var pokemonName, response, data, pokemonSprite, imgElement, error_1;
+        var pokemonName, response, data, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
-                    pokemonName = document.getElementById("pokemonName");
+                    pokemonName = 'pikachu';
                     return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(pokemonName))];
                 case 1:
                     response = _a.sent();
@@ -53,10 +54,9 @@ function getPokeData() {
                     return [4 /*yield*/, response.json()];
                 case 2:
                     data = _a.sent();
-                    pokemonWeight.textContent = "Weight: ".concat(data.weight);
-                    pokemonSprite = data.sprites.front_default;
-                    imgElement = document.getElementById("pokemonSprite");
-                    imgElement.style.display = "block";
+                    //pokemonWeight.textContent = `Weight: ${data.weight}`;
+                    // pokemonHeight.textContent = `Height: ${data.height}`;
+                    console.log(data);
                     return [3 /*break*/, 4];
                 case 3:
                     error_1 = _a.sent();
@@ -67,5 +67,4 @@ function getPokeData() {
         });
     });
 }
-document.querySelector("search_button").addEventListener("click", getPokeData);
-getPokeData();
+//document.querySelector("search_button")!.addEventListener("click", getPokeData)
