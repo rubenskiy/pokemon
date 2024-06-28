@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var pokemonHeight = document.getElementById("height");
 var pokemonWeight = document.getElementById("weight");
-//const pokemonPicture = document.getElementById("poke-pic");
+var pokemonPicture = document.getElementById("poke-pic");
 function getPokeData() {
     return __awaiter(this, void 0, void 0, function () {
         var pokemonName, response, data, error_1;
@@ -54,9 +54,8 @@ function getPokeData() {
                     return [4 /*yield*/, response.json()];
                 case 2:
                     data = _a.sent();
-                    //pokemonWeight.textContent = `Weight: ${data.weight}`;
-                    // pokemonHeight.textContent = `Height: ${data.height}`;
-                    console.log(data);
+                    pokemonWeight.textContent = "Weight: ".concat(data.weight);
+                    pokemonHeight.textContent = "Height: ".concat(data.height);
                     return [3 /*break*/, 4];
                 case 3:
                     error_1 = _a.sent();
